@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import styled from './schedule.module.scss';
 
-import Weekly from '/public/assets/weekly.svg';
-import Monthly from '/public/assets/monthly.svg';
-import Plus from '/public/assets/plus.svg';
+import Weekly from '@assets/weekly.svg';
+import Monthly from '@assets/monthly.svg';
+import Plus from '@assets/plus.svg';
 import BottomNavBar from '../_component/BottomNavBar';
-import ProfileHeader from '../../../_component/Header/ProfileHeader';
+import ProfileHeader from '@/app/_component/header/ProfileHeader';
 import Link from 'next/link';
 // import { usePathname } from 'next/navigation';
 
