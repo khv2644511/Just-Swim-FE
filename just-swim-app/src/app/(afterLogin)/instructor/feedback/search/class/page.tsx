@@ -9,7 +9,7 @@ import Check from '@assets/check.svg';
 import Clear from '@assets/clear.svg';
 import { useState } from 'react';
 
-export default function searchClass() {
+export default function SearchClass() {
   const [selected, setSelected] = useState<string | null>(null);
 
   let classList = [
@@ -73,8 +73,9 @@ export default function searchClass() {
           수업을 선택해주세요
         </p>
         <div className={styled.search_class}>
-          {classList.map((item) => (
+          {classList.map((item, index) => (
             <button
+              key={index}
               className={`${styled.item} ${selected === item.id ? styled.active : ''}`}
               onClick={() => setSelected(item.id)}>
               <div>
