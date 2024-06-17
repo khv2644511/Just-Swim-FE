@@ -2,7 +2,12 @@
 import styled from './colorModal.module.scss';
 import ColorPicker from './_component/ColorPicker';
 
-export default function ColorModal(props) {
+interface ModalProps {
+  showModal: boolean;
+  setShowModal: (value: boolean) => void;
+}
+
+export default function ColorModal(props: ModalProps) {
   const { showModal, setShowModal } = props;
 
   return (
