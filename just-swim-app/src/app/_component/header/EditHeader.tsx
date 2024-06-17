@@ -1,16 +1,16 @@
 import Image from 'next/image';
-import arrowBackIcon from '/public/assets/icon_arrow_back.png';
+import arrowBackIcon from '@assets/icon_arrow_back.png';
 import './header.scss';
 import Link from 'next/link';
 
 // Link href= 에 들어갈 url 을 받아온다고 생각했습니다.
-type Data = {
-  dataUrl: string;
-};
+// type Data = {
+//   dataUrl: string;
+// };
 
 interface Props {
   leftContent?: string;
-  data?: Data;
+  data?: object;
 }
 export default function EditHeader({ leftContent, data }: Props) {
   return (

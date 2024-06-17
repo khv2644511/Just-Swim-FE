@@ -5,8 +5,13 @@ import CustomerInfo from './_components/customerInfo/page';
 import FeedbackRecord from './_components/feedbackRecord/page';
 import CustomerClass from './_components/customerClass/page';
 
+interface Data {
+  name: string;
+  image: string;
+}
+
 export default function customerDetail() {
-  const data = {
+  const data: Data = {
     name: '강사',
     image: '',
   };

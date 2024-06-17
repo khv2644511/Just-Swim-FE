@@ -1,7 +1,7 @@
 import { DesktopDatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 // import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import calendar_icon from '/public/assets/input_icon_calendar.png';
+import calendar_icon from '@assets/input_icon_calendar.png';
 import Image from 'next/image';
 import Calendar from '@assets/calendar.svg';
 

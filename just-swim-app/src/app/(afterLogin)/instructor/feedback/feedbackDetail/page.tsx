@@ -2,9 +2,9 @@
 
 import EditHeader from '@/app/_component/header/EditHeader';
 import styled from './feedbackDetail.module.scss';
-import Send from '../../../../../../public/assets/send.svg';
-import Calendar from '../../../../../../public/assets/calendar.svg';
-import UserTypeIndividual from '../../../../../../public/assets/user_type_individual.svg';
+import Send from '@assets/send.svg';
+import Calendar from '@assets/calendar.svg';
+import UserTypeIndividual from '@assets/user_type_individual.svg';
 
 export default function FeedbackDetail() {
   return (
