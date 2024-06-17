@@ -1,7 +1,12 @@
 // import './colorModal.scss';
 import styled from './logoutModal.module.scss';
 
-export default function LogoutModal(props) {
+interface ModalProps {
+  showModal: boolean;
+  setShowModal: (value: boolean) => void;
+}
+
+export default function LogoutModal(props: ModalProps) {
   const { showModal, setShowModal } = props;
 
   return (
