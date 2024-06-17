@@ -15,35 +15,7 @@ import { useCostomerStore } from '@/app/store/store';
 import styled from './searchPerson.module.scss';
 
 export default function SearchPerson() {
-  const { customerList, checkItem, removeItem } = useCostomerStore();
-  // const customerList = [
-  //   { name: '김고독', profile: 'profile1' },
-  //   { name: '김고독', profile: 'no_profile' },
-  //   { name: '김고독', profile: 'profile1' },
-  //   { name: '김고독', profile: 'profile1' },
-  //   { name: '김고독', profile: 'no_profile' },
-  // ];
-
-  // const customerList2 = [
-  //   {
-  //     '아침 5반': [
-  //       { name: '김고독', profile: 'profile1' },
-  //       { name: '김고독', profile: 'no_profile' },
-  //       { name: '김고독', profile: 'profile1' },
-  //       { name: '김고독', profile: 'profile1' },
-  //       { name: '김고독', profile: 'no_profile' },
-  //     ],
-  //   },
-  //   {
-  //     '아침 6반': [
-  //       { name: '김해피', profile: 'profile1' },
-  //       { name: '김감자', profile: 'no_profile' },
-  //       { name: '김감자', profile: 'profile1' },
-  //       { name: '김감자', profile: 'profile1' },
-  //       { name: '김감자', profile: 'no_profile' },
-  //     ],
-  //   },
-  // ];
+  const { customerList, checkItem } = useCostomerStore();
 
   const [value, setValue] = useState('one');
 
@@ -51,10 +23,9 @@ export default function SearchPerson() {
     setValue(newValue);
   };
 
-  const [isChecked, setIsChecked] = useState(false);
   // const [checkItems, setCheckItems] = useState({})
 
-  const checkItemHandler = (e, id: number) => {
+  const checkItemHandler = (id: number) => {
     // e.preventDefault();  // Prevent the form from submitting on checkbox change
     // console.log(id)
 
@@ -64,10 +35,12 @@ export default function SearchPerson() {
     // }));
   };
 
-  const checkLength = () => {
-    const checkedCount = customerList.reduce((acc, group) => {
-      const customers = Object.values(group)[0];
-      const checkedCustomers = customers.filter((customer) => customer.check);
+  const checkLength = (): number => {
+    const checkedCount: any = customerList.reduce((acc, group) => {
+      const customers: any = Object.values(group)[0];
+      const checkedCustomers = customers.filter(
+        (customer: any) => customer.check,
+      );
       return acc + checkedCustomers.length;
     }, 0);
     console.log('Checked items count:', checkedCount);
@@ -134,13 +107,13 @@ export default function SearchPerson() {
             <div className={styled.group_name}>
               {Object.keys(group) && Object.keys(group[1])}
             </div>
-            {Object.values(group[1]).map((customer) =>
-              customer.map((item) => (
+            {Object.values(group[1]).map((customer: any) =>
+              customer.map((item: any) => (
                 <li key={item.id} className={styled.customer}>
                   <input
                     type="checkbox"
                     id={`item.id`}
-                    onChange={(e) => checkItemHandler(e, item.id)}
+                    onChange={() => checkItemHandler(item.id)}
                   />
                   <label className={styled.row} htmlFor={`checkbox ${item.id}`}>
                     <Image
