@@ -6,11 +6,11 @@ import styled from './feedbackTypeButton.module.scss';
 export default function FeedbackTypeButton() {
   const router = useRouter();
   const handleIndividualClick = () => {
-    router.push('');
+    router.push('write/person');
   };
 
   const handleGroupClick = () => {
-    router.push('');
+    router.push('write/class');
   };
 
   return (
